@@ -1,65 +1,64 @@
-# birthday_to_html.py - Run in Pydroid 3 to generate HTML
-html_code = """
+html_content = """
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Happy Birthday Surjo!</title>
     <style>
         body {
-            background: #ffc0cb;
+            background: linear-gradient(to right, #ffecd2, #fcb69f);
+            font-family: 'Comic Sans MS', cursive, sans-serif;
             text-align: center;
-            font-family: Arial, sans-serif;
+            padding: 50px;
+            animation: fadeIn 2s ease-in;
         }
+
         h1 {
-            color: #d40078;
-            text-shadow: 2px 2px 4px white;
+            font-size: 3em;
+            color: #ff4b2b;
         }
-        .cake {
-            font-size: 50px;
-            animation: blink 1s infinite;
+
+        p {
+            font-size: 1.5em;
+            color: #444;
         }
-        @keyframes blink {
-            0% { opacity: 1; }
-            50% { opacity: 0.5; }
-            100% { opacity: 1; }
+
+        .quote {
+            margin-top: 40px;
+            font-style: italic;
+            color: #555;
         }
-        .message {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            display: inline-block;
-            margin: 20px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .balloon {
+            width: 50px;
+            height: 70px;
+            background: red;
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            position: absolute;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-100px); }
+            100% { transform: translateY(0); }
         }
     </style>
 </head>
 <body>
-    <h1>🎉 HAPPY BIRTHDAY SURJO! 🎉</h1>
-    
-    <div class="cake">
-        🎂<br>
-        🔥🔥🔥<br>
-        || ||
-    </div>
-    
-    <div class="message">
-        <p>Wishing you an amazing day filled with joy!</p>
-        <p>From your Python-loving friend 😊</p>
-    </div>
-    
-    <script>
-        // Confetti effect when page loads
-        setTimeout(() => {
-            alert("Make a wish and click OK to blow the candles!");
-            document.querySelector(".cake").innerHTML = "🎂<br>💨💨💨<br>|| ||";
-        }, 2000);
-    </script>
+    <h1>Happy Birthday, Surjo!</h1>
+    <p>Wishing you a day filled with love, joy, and laughter!</p>
+    <div class="quote">"Count your life by smiles, not tears. Count your age by friends, not years." – John Lennon</div>
 </body>
 </html>
 """
 
-# Save as HTML file
-with open("surjo_birthday.html", "w") as f:
-    f.write(html_code)
+with open("surjo_birthday.html", "w", encoding="utf-8") as f:
+    f.write(html_content)
 
-print("HTML file created! Share 'surjo_birthday.html'")
+print("HTML birthday file created!")
